@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Student List</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="studentListApp/site.css" rel="stylesheet" />
+</head>
+<body ng-app="studentListApp" class="ng-scope">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Student List Application
+        </div>
+        <div class="container" ng-controller="studentController" ngcloak>
+            <h1>Students</h1>
+            <div class="row">
+                <div>
+                    <button class="btn btn-success" ng-click="addStudent()">
+                        Add
+                    </button>
+                    <button class="btn btn-danger" ng-click="deleteStudent()">
+                        Delete
+                    </button>
+                    <br style="clear:both">
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div  ng-repeat="student in student">
+
+                    <table border="0" class="pull-left">
+                        <tr>
+                            <td width="150">First Name: </td>
+                            <td>
+                                <input type="text" ng-model="student.FirstName" placeholder="Enter First Name here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Name: </td>
+                            <td>
+                                <input type="text" ng-model="student.LastName" placeholder="Enter Last Name here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Phone: </td>
+                            <td>
+                                <input type="text" ng-model="student.MobilePhone" placeholder="Enter Mobile Phone here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Home Phone: </td>
+                            <td>
+                                <input type="text" ng-model="student.HomePhone" placeholder="Enter Home Phone here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Street: </td>
+                            <td>
+                                <input type="text" ng-model="student.Street" placeholder="Enter Street here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>City: </td>
+                            <td>
+                                <input type="text" ng-model="student.City" placeholder="Enter City here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>State: </td>
+                            <td>
+                                <input type="text" ng-model="student.State" placeholder="Enter State here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zip: </td>
+                            <td>
+                                <input type="text" ng-model="student.Zip" placeholder="Enter Zip here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Country: </td>
+                            <td>
+                                <input type="text" ng-model="student.Country" placeholder="Enter Country here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Degree: </td>
+                            <td>
+                                <input type="text" ng-model="student.Degree" placeholder="Enter Degree here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Major: </td>
+                            <td>
+                                <input type="text" ng-model="student.Major" placeholder="Enter Major here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Personal Email ID: </td>
+                            <td>
+                                <input type="text" ng-model="student.PersonalEmail" placeholder="Enter Personal Email here">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Student Email ID: </td>
+                            <td>
+                                <input type="text" ng-model="student.StudentEmail" placeholder="Enter Student Email here">
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0">                        
+                        <tr>
+                            <td >
+                                <h1>Hello {{student.FirstName}} {{student.LastName}}!</h1>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br style="clear:both">
+                <br>
+            </div>
+            <div class="row">
+                <div>
+                    <button class="btn btn-primary" ng-click="previousStudent()">
+                        Previous
+                    </button>
+                    <button class="btn btn-primary" ng-click="nextStudent()">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="studentListApp/studentListApp.js"></script>
+    <script src="studentListApp/controllers/studentController.js"></script>
+    <script src="studentListApp/services/studentService.js"></script>
+</body>
+</html>
